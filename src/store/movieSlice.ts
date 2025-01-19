@@ -17,11 +17,13 @@ interface TrailerVideo {
 interface MovieState {
   nowPlayingMovies: Movie[];
   trailerVideo: TrailerVideo | null;
+  popularMovies: Movie[];
 }
 
 const initialState: MovieState = {
   nowPlayingMovies: [],
   trailerVideo: null,
+  popularMovies: [],
 };
 
 const movieSlice = createSlice({
@@ -34,8 +36,11 @@ const movieSlice = createSlice({
     setTrailerVideo: (state, action: PayloadAction<TrailerVideo | null>) => {
       state.trailerVideo = action.payload;
     },
+    addPopularMovies: (state, action: PayloadAction<Movie[]>) => {
+        state.popularMovies = action.payload;
+      },
   },
 });
 
-export const { addNowPlayingMovies, setTrailerVideo } = movieSlice.actions;
+export const { addNowPlayingMovies, setTrailerVideo, addPopularMovies } = movieSlice.actions;
 export default movieSlice.reducer; 
