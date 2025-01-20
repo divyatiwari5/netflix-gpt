@@ -10,6 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 /.firebase
+.firebaserc
 
 # testing
 /coverage
