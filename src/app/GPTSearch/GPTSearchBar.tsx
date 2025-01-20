@@ -31,7 +31,7 @@ const GPTSearchBar = () => {
         messages: [
           {
             role: 'user',
-            content: `Act as a Movie Recommendation System and suggest some movies for the query: ${searchText}. Only give me names of 5 movies, comma separated like the example result given ahead. Example Result: Inception, The Matrix, Interstellar, The Dark Knight, Pulp Fiction`,
+            content: `Act as a Movie Recommendation System and suggest some movies for the query: ${searchText}. Only give me names of 10 movies, comma separated like the example result given ahead. Example Result: Inception, The Matrix, Interstellar, The Dark Knight, Pulp Fiction`,
           },
         ],
         model: 'gpt-3.5-turbo',

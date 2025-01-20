@@ -1,8 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface Movie {
+  id: number;
+  title: string;
+  poster_path: string;
+  overview: string;
+}
+
 interface GPTState {
   showGPTSearch: boolean;
-  movieResults: any[];
+  movieResults: Movie[];
   searchQuery: string;
 }
 
@@ -19,7 +26,7 @@ const gptSlice = createSlice({
     toggleGPTSearchView: (state) => {
       state.showGPTSearch = !state.showGPTSearch;
     },
-    setGPTMovieResults: (state, action: PayloadAction<any[]>) => {
+    setGPTMovieResults: (state, action: PayloadAction<Movie[]>) => {
       state.movieResults = action.payload;
     },
     setSearchQuery: (state, action: PayloadAction<string>) => {

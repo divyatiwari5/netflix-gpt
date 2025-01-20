@@ -12,7 +12,7 @@ const GPTSearch = () => {
           alt="bg-image"
           width={0}
           height={0}
-          className="w-full h-screen object-cover"
+          className="w-full object-cover"
         />
       </div>
       <div className="absolute inset-0 bg-black bg-opacity-50" />

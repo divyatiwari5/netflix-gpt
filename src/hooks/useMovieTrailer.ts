@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 
 const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
+interface TMDBVideo {
+  type: string;
+  key: string;
+  site: string;
+}
+
 export const useMovieTrailer = (movieId: number | undefined) => {
   const [trailerKey, setTrailerKey] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +31,7 @@ export const useMovieTrailer = (movieId: number | undefined) => {
         
         const data = await response.json();
         const trailers = data.results?.filter(
-          (video: any) => video.type === "Trailer"
+          (video: TMDBVideo) => video.type === "Trailer"
         );
         
         const trailerData = trailers.length ? trailers[0] : data.results[0];

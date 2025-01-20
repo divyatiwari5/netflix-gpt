@@ -54,6 +54,7 @@ const Login = () => {
           );
           setSuccess("Account created successfully!");
         }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         setError(error.message.replace("Firebase: ", ""));
       }
